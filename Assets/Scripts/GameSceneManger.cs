@@ -6,9 +6,11 @@ using Photon.Realtime;
 
 public class GameSceneManger : MonoBehaviourPunCallbacks
 {
-    public override void OnJoinedRoom()
+    [SerializeField] GameObject PlayerPrefab;
+    public void Start()
     {
         DebugLog.AddMessege("Welcome  to " + PhotonNetwork.CurrentRoom.Name);
+        PhotonNetwork.Instantiate(PlayerPrefab.name,Vector3.zero,Quaternion.identity);
     }
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {

@@ -15,16 +15,4 @@ public class PhotonConnectingManger : MonoBehaviourPunCallbacks
     #endregion
 
 
-    #region Callback
-    public override void OnConnectedToMaster()
-    {
-        Debug.Log(PhotonNetwork.NickName + "Connected to master");
-    }
-
-    public override void OnErrorInfo(ErrorInfo errorInfo)
-    {
-        base.OnErrorInfo(errorInfo);
-        Debug.Log(errorInfo);
-    }
-    #endregion
 }

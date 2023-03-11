@@ -28,6 +28,10 @@ public class ConnectionManger : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = nameField.text;
         manger.EnterTheServer();
     }
+    public void OnClick_JoinRoom()
+    {
+        manger.JoinRoom();
+    }
     public override void OnConnectedToMaster()
     {
         Debug.Log(PhotonNetwork.NickName + "Connected to master");

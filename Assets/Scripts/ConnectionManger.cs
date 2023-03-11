@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using TMPro;
+using Unity.VisualScripting;
 
 public class ConnectionManger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public TMP_InputField nameField;
+    PhotonConnectingManger manger;
+    private void Start()
     {
-        
+        manger = this.AddComponent<PhotonConnectingManger>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnCLick_ConnectToServer()
     {
-        
+        Debug.Log("COnnnecting to server");
+        PhotonNetwork.NickName = nameField.text;
+        manger.EnterTheServer();
     }
 }

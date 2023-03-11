@@ -1,18 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using ExitGames.Client.Photon;
 
-public class PhotonConnectingManger : MonoBehaviour
+public class PhotonConnectingManger : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Public Functions
+    public void EnterTheServer()
     {
-        
+        PhotonNetwork.ConnectUsingSettings();
+    }
+    #endregion
+
+
+    #region Callback
+    public override void OnConnectedToMaster()
+    {
+        Debug.Log(PhotonNetwork.NickName + "Connected to master");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnErrorInfo(ErrorInfo errorInfo)
     {
-        
+        base.OnErrorInfo(errorInfo);
+        Debug.Log(errorInfo);
     }
+    #endregion
 }

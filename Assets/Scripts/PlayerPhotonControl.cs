@@ -7,7 +7,7 @@ public class PlayerPhotonControl : MonoBehaviourPunCallbacks
 {
     public FirstPersonController FirstPersonController;
     public Camera Camera;
-    public TMP_Text nameTMP;
+    
     void Start()
     {
         
@@ -16,10 +16,7 @@ public class PlayerPhotonControl : MonoBehaviourPunCallbacks
             FirstPersonController.enabled = false;
             Camera.enabled = false;
         }
-        else
-        {
-            nameTMP.text = PhotonNetwork.NickName;
-        }
+
     }
 
     

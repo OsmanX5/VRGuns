@@ -19,6 +19,8 @@ public class ConnectionManger : MonoBehaviourPunCallbacks
         ConnectingPanel.SetActive(false);
         LoobiesPanel.SetActive(false);
         manger = this.AddComponent<PhotonConnectingManger>();
+        OnCLick_ConnectToServer();
+
     }
     public void OnCLick_ConnectToServer()
     {
@@ -37,6 +39,8 @@ public class ConnectionManger : MonoBehaviourPunCallbacks
         Debug.Log(PhotonNetwork.NickName + "Connected to master");
         ConnectingPanel.SetActive(false);
         LoobiesPanel.SetActive(true);
+        OnClick_JoinRoom();
+
     }
     public override void OnDisconnected(DisconnectCause cause)
     {

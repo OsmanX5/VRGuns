@@ -4,18 +4,26 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRPlayerPhotonViewControl : MonoBehaviourPunCallbacks
 {
-	public GameObject XRInteracitonManger;
-	public Camera Camera;
+	public GameObject[] toOff;
+	public ActionBasedController[] toOff2;
 	void Start()
 	{
+		
 
 		if (!photonView.IsMine)
 		{
-			XRInteracitonManger.SetActive(false);
-			Camera.enabled = false;
+			foreach (var go in toOff)
+			{
+				go.SetActive(false);
+			}
+			foreach (var go in toOff2)
+			{
+				go.enabled = false;
+			}
 		}
 
 	}

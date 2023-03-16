@@ -8,21 +8,21 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class VRPlayerPhotonViewControl : MonoBehaviourPunCallbacks
 {
-	public GameObject[] toOff;
-	public ActionBasedController[] toOff2;
+	public GameObject[] ObjectsToDisable;
+	public ActionBasedController[] ComponentsToDisable;
 	void Start()
 	{
 		
 
 		if (!photonView.IsMine)
 		{
-			foreach (var go in toOff)
+			foreach (var obj in ObjectsToDisable)
 			{
-				go.SetActive(false);
+				obj.SetActive(false);
 			}
-			foreach (var go in toOff2)
+			foreach (var comp in ComponentsToDisable)
 			{
-				go.enabled = false;
+				comp.enabled = false;
 			}
 		}
 

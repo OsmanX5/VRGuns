@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 575905567878088515}
   - component: {fileID: 575905567878088512}
-  - component: {fileID: 7763061906976775069}
   m_Layer: 0
   m_Name: Right Hand Presence
   m_TagString: Untagged
@@ -48,22 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controllerCharacteristics: 576
   handAnimator: {fileID: 8886990798460994865}
---- !u!114 &7763061906976775069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575905567878088513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!1 &575905568947707463
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +106,7 @@ GameObject:
   - component: {fileID: 8439291955647153932}
   - component: {fileID: 8439291955647153933}
   - component: {fileID: 8439291955647153934}
+  - component: {fileID: 294477038086495262}
   m_Layer: 0
   m_Name: DirectLeftHand
   m_TagString: Untagged
@@ -413,6 +397,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.03
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &294477038086495262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 777340384442725803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &851998728942018745
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,7 +882,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3763058391296414203}
   - component: {fileID: 3763058391305453101}
-  - component: {fileID: 4199538103657731831}
   - component: {fileID: 7679033276616208956}
   m_Layer: 0
   m_Name: Custom Left Hand Model
@@ -928,22 +927,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &4199538103657731831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3763058391296052635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
 --- !u!114 &7679033276616208956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2082,6 +2065,7 @@ GameObject:
   - component: {fileID: 5516976771638037999}
   - component: {fileID: 3357602473770634919}
   - component: {fileID: 193981709278367003}
+  - component: {fileID: 1349194416750876125}
   m_Layer: 0
   m_Name: MoveProvider
   m_TagString: Untagged
@@ -2160,6 +2144,44 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &1349194416750876125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5481504710520154544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919e39492806b334982b6b84c90dd927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_System: {fileID: 3357602473770634919}
+  m_TurnSpeed: 60
+  m_LeftHandTurnAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Left Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b9ac2485-f305-451c-9106-d1d25cc235dc
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 1010738217276881514, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  m_RightHandTurnAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Right Hand Turn
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 93119ec4-ae3b-41c0-8fb4-7ff4c5e6f732
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &5868222673416353046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2417,8 +2439,8 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7865511659803247736}
-  - {fileID: 7763061906976775069}
-  - {fileID: 4199538103657731831}
+  - {fileID: 294477038086495262}
+  - {fileID: 5416495395191849400}
   - {fileID: 7679033276616208956}
   - {fileID: 4630500540681287636}
   sceneViewId: 0
@@ -3064,6 +3086,7 @@ GameObject:
   - component: {fileID: 745181712907906996}
   - component: {fileID: 8391177924370709609}
   - component: {fileID: 8391177924370709610}
+  - component: {fileID: 5416495395191849400}
   m_Layer: 0
   m_Name: DirectRightHand
   m_TagString: Untagged
@@ -3354,6 +3377,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.03
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5416495395191849400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8391177924370709608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &8886990798470493825
 GameObject:
   m_ObjectHideFlags: 0
